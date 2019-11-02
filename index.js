@@ -7,7 +7,8 @@
 //     If the total is below 21, he will be asked again
 // If he stands, the total will reset
 
-function BlackjackGame() {
+
+function BlackjackGame() { //create a BlackjackGame object, where we can put together all the properties and methods
     this.total = 0;
     this.card = 0;
 
@@ -43,4 +44,5 @@ function BlackjackGame() {
     };
 }
 
+// start game
 let game = new BlackjackGame()
