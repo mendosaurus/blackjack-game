@@ -10,21 +10,29 @@
 function BlackjackGame() {
     this.total = 0;
     this.card = 0;
+
+    // nextCard
     this.nextCard = function () {
         this.card = parseInt((Math.random() * 13) + 1); // number between 1-13
         console.log("Next Card... " + this.card);
     };
+
+    // play
     this.play = function () {
         this.nextCard();
         this.total += this.card;
         this.checkResult();
     };
+
+    // stand
     this.stand = function () {
         this.total = 0;
         console.log("Scared huh? Let's start again");
     };
+    
+    // check result and reset if the player lost
     this.checkResult = function () {
-        console.log("Total = " + this.total);
+        console.log(`Total = ${this.total}`);
         if (this.total > 21) {
             console.log("You lost! Play Again?")
             this.total = 0;
@@ -34,3 +42,5 @@ function BlackjackGame() {
         }
     };
 }
+
+let game = new BlackjackGame()
